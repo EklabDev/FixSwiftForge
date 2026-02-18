@@ -1,0 +1,111 @@
+[
+  {
+    "mtType": "103",
+    "mxType": "pacs.008.001.08",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "CdtTrfTxInf.PmtId.InstrId", "direction": "both" },
+      { "mtTag": "23B", "mxPath": "CdtTrfTxInf.PmtTpInf.SvcLvl.Cd", "direction": "both" },
+      { "mtTag": "32A", "mxPath": "CdtTrfTxInf.IntrBkSttlmAmt", "transform": "splitCurrencyAmount", "direction": "both" },
+      { "mtTag": "50K", "mxPath": "CdtTrfTxInf.Dbtr.Nm", "direction": "both" },
+      { "mtTag": "59", "mxPath": "CdtTrfTxInf.Cdtr.Nm", "direction": "both" },
+      { "mtTag": "70", "mxPath": "CdtTrfTxInf.RmtInf.Ustrd", "direction": "both" },
+      { "mtTag": "71A", "mxPath": "CdtTrfTxInf.ChrgBr", "direction": "both" },
+      { "mtTag": "77B", "mxPath": "CdtTrfTxInf.RgltryRptg.Dtls.Cd", "direction": "mt-to-mx" }
+    ]
+  },
+  {
+    "mtType": "202",
+    "mxType": "pacs.009.001.08",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "CdtTrfTxInf.PmtId.InstrId", "direction": "both" },
+      { "mtTag": "21", "mxPath": "CdtTrfTxInf.PmtId.EndToEndId", "direction": "both" },
+      { "mtTag": "32A", "mxPath": "CdtTrfTxInf.IntrBkSttlmAmt", "transform": "splitCurrencyAmount", "direction": "both" },
+      { "mtTag": "52A", "mxPath": "CdtTrfTxInf.Dbtr.FinInstnId.BICFI", "direction": "both" },
+      { "mtTag": "58A", "mxPath": "CdtTrfTxInf.Cdtr.FinInstnId.BICFI", "direction": "both" }
+    ]
+  },
+  {
+    "mtType": "101",
+    "mxType": "pain.001.001.09",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "PmtInf.PmtInfId", "direction": "both" },
+      { "mtTag": "50H", "mxPath": "PmtInf.Dbtr.Nm", "direction": "both" },
+      { "mtTag": "59", "mxPath": "PmtInf.CdtTrfTxInf.Cdtr.Nm", "direction": "both" },
+      { "mtTag": "32B", "mxPath": "PmtInf.CdtTrfTxInf.Amt.InstdAmt", "transform": "splitCurrencyAmount", "direction": "both" }
+    ]
+  },
+  {
+    "mtType": "900",
+    "mxType": "camt.054.001.08",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "Ntfctn.Id", "direction": "both" },
+      { "mtTag": "21", "mxPath": "Ntfctn.Ntry.NtryRef", "direction": "both" },
+      { "mtTag": "32A", "mxPath": "Ntfctn.Ntry.Amt", "transform": "splitCurrencyAmount", "direction": "both" },
+      { "mtTag": "52A", "mxPath": "Ntfctn.Ntry.NtryDtls.TxDtls.RltdPties.DbtrAgt.FinInstnId.BICFI", "direction": "mt-to-mx" }
+    ]
+  },
+  {
+    "mtType": "940",
+    "mxType": "camt.053.001.08",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "Stmt.Id", "direction": "both" },
+      { "mtTag": "25", "mxPath": "Stmt.Acct.Id.IBAN", "direction": "both" },
+      { "mtTag": "60F", "mxPath": "Stmt.Bal.Amt", "transform": "splitBalanceAmount", "direction": "mt-to-mx" },
+      { "mtTag": "61", "mxPath": "Stmt.Ntry.Amt", "transform": "splitStatementLine", "direction": "mt-to-mx" },
+      { "mtTag": "62F", "mxPath": "Stmt.Bal.Amt", "transform": "splitBalanceAmount", "direction": "mt-to-mx" }
+    ]
+  },
+  {
+    "mtType": "950",
+    "mxType": "camt.053.001.08",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "Stmt.Id", "direction": "both" },
+      { "mtTag": "25", "mxPath": "Stmt.Acct.Id.IBAN", "direction": "both" },
+      { "mtTag": "60F", "mxPath": "Stmt.Bal.Amt", "transform": "splitBalanceAmount", "direction": "mt-to-mx" },
+      { "mtTag": "61", "mxPath": "Stmt.Ntry.Amt", "transform": "splitStatementLine", "direction": "mt-to-mx" },
+      { "mtTag": "62F", "mxPath": "Stmt.Bal.Amt", "transform": "splitBalanceAmount", "direction": "mt-to-mx" }
+    ]
+  },
+  {
+    "mtType": "300",
+    "mxType": "fxtr.014.001.03",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "TradInf.TradId", "direction": "both" },
+      { "mtTag": "22A", "mxPath": "TradInf.TpCd", "direction": "both" },
+      { "mtTag": "82A", "mxPath": "TradInf.TradgPty.FinInstnId.BICFI", "direction": "both" },
+      { "mtTag": "87A", "mxPath": "TradInf.CtrPty.FinInstnId.BICFI", "direction": "both" },
+      { "mtTag": "32B", "mxPath": "TradInf.TradAmts.TradgSdBuyAmt", "transform": "splitCurrencyAmount", "direction": "both" },
+      { "mtTag": "33B", "mxPath": "TradInf.TradAmts.TradgSdSellAmt", "transform": "splitCurrencyAmount", "direction": "both" }
+    ]
+  },
+  {
+    "mtType": "502",
+    "mxType": "sese.023.001.09",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "TxId.AcctOwnrTxId", "direction": "both" },
+      { "mtTag": "23G", "mxPath": "TxTpAndAddtlParams.SctiesTxTp", "direction": "both" },
+      { "mtTag": "35B", "mxPath": "FinInstrmId.ISIN", "direction": "both" },
+      { "mtTag": "36B", "mxPath": "QtyAndAcctDtls.SttlmQty.Qty.Unit", "direction": "both" }
+    ]
+  },
+  {
+    "mtType": "535",
+    "mxType": "semt.002.001.10",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "Pgntn.MsgId", "direction": "both" },
+      { "mtTag": "23G", "mxPath": "StmtGnlDtls.StmtTp", "direction": "both" },
+      { "mtTag": "35B", "mxPath": "FinInstrm.Id.ISIN", "direction": "both" },
+      { "mtTag": "93B", "mxPath": "BalForAcct.AggtBal.ShrtLngInd", "direction": "mt-to-mx" }
+    ]
+  },
+  {
+    "mtType": "700",
+    "mxType": "tsmt.014.001.05",
+    "fieldMappings": [
+      { "mtTag": "20", "mxPath": "DocCredId", "direction": "both" },
+      { "mtTag": "31D", "mxPath": "XpryDt", "direction": "both" },
+      { "mtTag": "40A", "mxPath": "FrmOfDocCredit", "direction": "both" },
+      { "mtTag": "32B", "mxPath": "DocCredAmt", "transform": "splitCurrencyAmount", "direction": "both" }
+    ]
+  }
+]

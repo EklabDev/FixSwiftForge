@@ -1,0 +1,114 @@
+{
+  "businessArea": "head",
+  "businessAreaName": "Business Application Header",
+  "messages": [
+    {
+      "type": "head.001.001.03",
+      "name": "BusinessApplicationHeader",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:head.001.001.03",
+      "rootElement": "AppHdr",
+      "elements": [
+        {
+          "name": "Fr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "FIId", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgId", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "To",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "FIId", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgId", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "BizMsgIdr",
+          "type": "string",
+          "minOccurs": 1,
+          "maxOccurs": 1
+        },
+        {
+          "name": "MsgDefIdr",
+          "type": "string",
+          "minOccurs": 1,
+          "maxOccurs": 1
+        },
+        {
+          "name": "BizSvc",
+          "type": "string",
+          "minOccurs": 0,
+          "maxOccurs": 1
+        },
+        {
+          "name": "MktPrctc",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Regy", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "CreDt",
+          "type": "dateTime",
+          "minOccurs": 1,
+          "maxOccurs": 1
+        },
+        {
+          "name": "BizPrcgDt",
+          "type": "dateTime",
+          "minOccurs": 0,
+          "maxOccurs": 1
+        },
+        {
+          "name": "CpyDplct",
+          "type": "string",
+          "minOccurs": 0,
+          "maxOccurs": 1
+        },
+        {
+          "name": "PssblDplct",
+          "type": "boolean",
+          "minOccurs": 0,
+          "maxOccurs": 1
+        },
+        {
+          "name": "Prty",
+          "type": "string",
+          "minOccurs": 0,
+          "maxOccurs": 1
+        },
+        {
+          "name": "Sgntr",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Ds", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "Rltd",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Fr", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "To", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "BizMsgIdr", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "MsgDefIdr", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "CreDt", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

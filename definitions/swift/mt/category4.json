@@ -1,0 +1,223 @@
+{
+  "category": 4,
+  "categoryName": "Collections and Cash Letters",
+  "messages": [
+    {
+      "type": "400",
+      "name": "Advice of Payment",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount Collected", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "33A", "name": "Value Date/Currency/Amount of Proceeds", "format": "6!n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "52A", "name": "Collecting Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "53A", "name": "Sender's Correspondent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "54A", "name": "Receiver's Correspondent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "58A", "name": "Beneficiary Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "405",
+      "name": "Clean Collection",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23E", "name": "Instruction Code", "format": "4!c[/30x]", "mandatory": false, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "50A", "name": "Drawer", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "52A", "name": "Remitting Bank", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "53A", "name": "Sender's Correspondent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Collecting Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Drawee", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "410",
+      "name": "Acknowledgement",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "52A", "name": "Collecting Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "412",
+      "name": "Advice of Acceptance",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Acceptance", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Collecting Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "416",
+      "name": "Advice of Non-Payment/Non-Acceptance",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Collecting Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Drawee", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "75", "name": "Reason for Non-Payment", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "420",
+      "name": "Tracer",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Remitting Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Drawee", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "422",
+      "name": "Advice of Fate and Request for Instructions",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Collecting Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Drawee", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "75", "name": "Queries/Reason for Fate", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "430",
+      "name": "Amendment of Instructions",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "52A", "name": "Remitting Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Drawee", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "450",
+      "name": "Cash Letter Credit Advice",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Cash Letter", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Total Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Sending Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "455",
+      "name": "Cash Letter Credit Adjustment Advice",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Sending Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "75", "name": "Reason for Adjustment", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "456",
+      "name": "Advice of Dishonour",
+      "fields": [
+        { "tag": "20", "name": "Sending Bank's TRN", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Presenting Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Drawee", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "75", "name": "Reason for Dishonour", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "490",
+      "name": "Advice of Charges, Interest and Other Adjustments",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "491",
+      "name": "Request for Payment of Charges, Interest and Other Expenses",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "492",
+      "name": "Request for Cancellation",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "11S", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": true, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "495",
+      "name": "Queries",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Queries", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "496",
+      "name": "Answers",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Answers", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "498",
+      "name": "Proprietary Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Sub-Message Type", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "77E", "name": "Proprietary Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "499",
+      "name": "Free Format Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    }
+  ]
+}

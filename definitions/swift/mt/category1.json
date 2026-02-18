@@ -1,0 +1,241 @@
+{
+  "category": 1,
+  "categoryName": "Customer Payments and Cheques",
+  "messages": [
+    {
+      "type": "101",
+      "name": "Request for Transfer",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21R", "name": "Customer Specified Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "28D", "name": "Message Index/Total", "format": "5n/5n", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Requested Execution Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Authorisation", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "50H", "name": "Ordering Customer", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Account Servicing Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "21", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": true },
+        { "tag": "32B", "name": "Currency/Transaction Amount", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": true },
+        { "tag": "59", "name": "Beneficiary Customer", "format": "4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "70", "name": "Remittance Information", "format": "4*35x", "mandatory": false, "repeatable": true },
+        { "tag": "71A", "name": "Details of Charges", "format": "3!a", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "102",
+      "name": "Multiple Customer Credit Transfer",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Instruction Code", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "51A", "name": "Sending Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "50A", "name": "Ordering Customer", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Ordering Institution", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "26T", "name": "Transaction Type Code", "format": "3!a", "mandatory": false, "repeatable": true },
+        { "tag": "21", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": true },
+        { "tag": "32B", "name": "Currency/Transaction Amount", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": true },
+        { "tag": "59", "name": "Beneficiary Customer", "format": "4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "70", "name": "Remittance Information", "format": "4*35x", "mandatory": false, "repeatable": true },
+        { "tag": "71A", "name": "Details of Charges", "format": "3!a", "mandatory": true, "repeatable": true },
+        { "tag": "32A", "name": "Value Date/Currency/Total Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "103",
+      "name": "Single Customer Credit Transfer",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "13C", "name": "Time Indication", "format": "/8c/4!n1!x4!n", "mandatory": false, "repeatable": false },
+        { "tag": "23B", "name": "Bank Operation Code", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "23E", "name": "Instruction Code", "format": "4!c[/30x]", "mandatory": false, "repeatable": true },
+        { "tag": "26T", "name": "Transaction Type Code", "format": "3!a", "mandatory": false, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Interbank Settled Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "33B", "name": "Currency/Instructed Amount", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "36", "name": "Exchange Rate", "format": "12d", "mandatory": false, "repeatable": false },
+        { "tag": "50A", "name": "Ordering Customer", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Ordering Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "53A", "name": "Sender's Correspondent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "54A", "name": "Receiver's Correspondent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "56A", "name": "Intermediary Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Beneficiary Customer", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "70", "name": "Remittance Information", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "71A", "name": "Details of Charges", "format": "3!a", "mandatory": true, "repeatable": false },
+        { "tag": "71F", "name": "Sender's Charges", "format": "3!a15d", "mandatory": false, "repeatable": true },
+        { "tag": "71G", "name": "Receiver's Charges", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "77B", "name": "Regulatory Reporting", "format": "3*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "104",
+      "name": "Direct Debit and Request for Debit Transfer",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23E", "name": "Instruction Code", "format": "4!c[/30x]", "mandatory": false, "repeatable": false },
+        { "tag": "30", "name": "Requested Execution Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "51A", "name": "Sending Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "50A", "name": "Creditor", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Creditor's Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "21", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": true },
+        { "tag": "32B", "name": "Currency/Transaction Amount", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "50K", "name": "Debtor", "format": "4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "59", "name": "Beneficiary Customer", "format": "4*35x", "mandatory": false, "repeatable": true },
+        { "tag": "21E", "name": "End to End Reference", "format": "16x", "mandatory": false, "repeatable": true },
+        { "tag": "71A", "name": "Details of Charges", "format": "3!a", "mandatory": true, "repeatable": true },
+        { "tag": "32A", "name": "Value Date/Currency/Total Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "105",
+      "name": "EDIFACT Envelope",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "27", "name": "Sequence of Total", "format": "1!n/1!n", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "77F", "name": "EDIFACT Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "107",
+      "name": "General Direct Debit Message",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23E", "name": "Instruction Code", "format": "4!c[/30x]", "mandatory": false, "repeatable": false },
+        { "tag": "30", "name": "Requested Execution Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "51A", "name": "Sending Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "50A", "name": "Creditor", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Creditor's Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "21", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": true },
+        { "tag": "32B", "name": "Currency/Transaction Amount", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "50K", "name": "Debtor", "format": "4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "59", "name": "Beneficiary Customer", "format": "4*35x", "mandatory": false, "repeatable": true },
+        { "tag": "71A", "name": "Details of Charges", "format": "3!a", "mandatory": true, "repeatable": true },
+        { "tag": "77B", "name": "Regulatory Reporting", "format": "3*35x", "mandatory": false, "repeatable": true },
+        { "tag": "32A", "name": "Value Date/Currency/Total Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "110",
+      "name": "Advice of Cheque(s)",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "53A", "name": "Sender's Correspondent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "21", "name": "Cheque Number", "format": "16x", "mandatory": true, "repeatable": true },
+        { "tag": "30", "name": "Date of Issue", "format": "6!n", "mandatory": true, "repeatable": true },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "52A", "name": "Drawer Bank", "format": "37x", "mandatory": false, "repeatable": true },
+        { "tag": "59", "name": "Payee", "format": "4*35x", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "111",
+      "name": "Request for Stop Payment of a Cheque",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Cheque Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Issue", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Drawer Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Payee", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "75", "name": "Reason for Stop Payment", "format": "6*35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "112",
+      "name": "Status of a Request for Stop Payment of a Cheque",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Issue", "format": "6!n", "mandatory": false, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Payee", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "76", "name": "Status of Stop Payment Request", "format": "6*35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "121",
+      "name": "Multiple Interbank Funds Transfer (EDIFACT)",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "27", "name": "Sequence of Total", "format": "1!n/1!n", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "77F", "name": "EDIFACT Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "190",
+      "name": "Advice of Charges, Interest and Other Adjustments",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Ordering Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "191",
+      "name": "Request for Payment of Charges, Interest and Other Expenses",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Ordering Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "192",
+      "name": "Request for Cancellation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "11S", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": true, "repeatable": false },
+        { "tag": "79", "name": "Narrative Description of Original Message", "format": "35*50x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "195",
+      "name": "Queries",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Queries", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false },
+        { "tag": "11R", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "196",
+      "name": "Answers",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Answers", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false },
+        { "tag": "11R", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "198",
+      "name": "Proprietary Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Sub-Message Type", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "77E", "name": "Proprietary Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "199",
+      "name": "Free Format Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    }
+  ]
+}

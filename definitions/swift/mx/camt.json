@@ -1,0 +1,994 @@
+{
+  "businessArea": "camt",
+  "businessAreaName": "Cash Management",
+  "messages": [
+    {
+      "type": "camt.003.001.07",
+      "name": "GetAccount",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.003.001.07",
+      "rootElement": "GetAcct",
+      "elements": [
+        {
+          "name": "MsgHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "ReqTp", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "AcctQryDef",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "AcctCrit", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.004.001.08",
+      "name": "ReturnAccount",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.004.001.08",
+      "rootElement": "RtrAcct",
+      "elements": [
+        {
+          "name": "MsgHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlBizQry", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "RptOrErr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "AcctRpt", "type": "object", "minOccurs": 0, "maxOccurs": -1 },
+            { "name": "OprlErr", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.005.001.09",
+      "name": "GetTransaction",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.005.001.09",
+      "rootElement": "GetTx",
+      "elements": [
+        {
+          "name": "MsgHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "ReqTp", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "TxQryDef",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "TxCrit", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.006.001.09",
+      "name": "ReturnTransaction",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.006.001.09",
+      "rootElement": "RtrTx",
+      "elements": [
+        {
+          "name": "MsgHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlBizQry", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "RptOrErr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "TxRpt", "type": "object", "minOccurs": 0, "maxOccurs": -1 },
+            { "name": "OprlErr", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.007.001.09",
+      "name": "ModifyTransaction",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.007.001.09",
+      "rootElement": "ModfyTx",
+      "elements": [
+        {
+          "name": "MsgHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Mod",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "PmtId", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "NewPmtValSet", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.008.001.09",
+      "name": "CancelTransaction",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.008.001.09",
+      "rootElement": "CclTx",
+      "elements": [
+        {
+          "name": "MsgHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "CxlByRef",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "PmtId", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CxlRsn", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.026.001.09",
+      "name": "UnableToApply",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.026.001.09",
+      "rootElement": "UblToApply",
+      "elements": [
+        {
+          "name": "Assgnmt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Case",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cretr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Undrlyg",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Initn", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBk", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "StmtNtry", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Justfn",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "AnyInf", "type": "boolean", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "MssngOrIncrrctInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "PssblDplctInstr", "type": "boolean", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.027.001.09",
+      "name": "ClaimNonReceipt",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.027.001.09",
+      "rootElement": "ClmNonRct",
+      "elements": [
+        {
+          "name": "Assgnmt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Case",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cretr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Undrlyg",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Initn", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBk", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "StmtNtry", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "CoverDtls",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MssngCoverInd", "type": "boolean", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CoverCrrctn", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.028.001.11",
+      "name": "AdditionalPaymentInformation",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.028.001.11",
+      "rootElement": "AddtlPmtInf",
+      "elements": [
+        {
+          "name": "Assgnmt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Case",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cretr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Undrlyg",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Initn", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBk", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "StmtNtry", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Inf",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "InstrId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "EndToEndId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "TxId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "UETR", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Dbtr", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Cdtr", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.029.001.12",
+      "name": "ResolutionOfInvestigation",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.029.001.12",
+      "rootElement": "RsltnOfInvstgtn",
+      "elements": [
+        {
+          "name": "Assgnmt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "RslvdCase",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cretr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Sts",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Conf", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RjctdMod", "type": "object", "minOccurs": 0, "maxOccurs": -1 },
+            { "name": "DplctOf", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "CxlDtls",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "TxInfAndSts", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "StmtDtls",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "CrctdStmtNtry", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.030.001.05",
+      "name": "NotificationOfCaseAssignment",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.030.001.05",
+      "rootElement": "NtfctnOfCaseAssgnmt",
+      "elements": [
+        {
+          "name": "Hdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Fr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "To", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Case",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cretr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Assgnmt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.031.001.06",
+      "name": "RejectInvestigation",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.031.001.06",
+      "rootElement": "RjctInvstgtn",
+      "elements": [
+        {
+          "name": "Assgnmt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Case",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cretr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Justfn",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "RjctnRsn", "type": "string", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.052.001.10",
+      "name": "BankToCustomerAccountReport",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.052.001.10",
+      "rootElement": "BkToCstmrAcctRpt",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "MsgRcpt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "MsgPgntn", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "AddtlInf", "type": "string", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Rpt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "ElctrncSeqNb", "type": "decimal", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RptgSeq", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "LglSeqNb", "type": "decimal", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "FrToDt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Acct", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "RltdAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Bal", "type": "object", "minOccurs": 0, "maxOccurs": -1 },
+            { "name": "TxsSummry", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Ntry", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.053.001.10",
+      "name": "BankToCustomerStatement",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.053.001.10",
+      "rootElement": "BkToCstmrStmt",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "MsgRcpt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "MsgPgntn", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "AddtlInf", "type": "string", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Stmt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "ElctrncSeqNb", "type": "decimal", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RptgSeq", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "LglSeqNb", "type": "decimal", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "FrToDt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Acct", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "RltdAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Bal", "type": "object", "minOccurs": 1, "maxOccurs": -1 },
+            { "name": "TxsSummry", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Ntry", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.054.001.10",
+      "name": "BankToCustomerDebitCreditNotification",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.054.001.10",
+      "rootElement": "BkToCstmrDbtCdtNtfctn",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "MsgRcpt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "MsgPgntn", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "AddtlInf", "type": "string", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Ntfctn",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "ElctrncSeqNb", "type": "decimal", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RptgSeq", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "LglSeqNb", "type": "decimal", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "FrToDt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Acct", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "RltdAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "TxsSummry", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Ntry", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.055.001.11",
+      "name": "CustomerPaymentCancellationRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.055.001.11",
+      "rootElement": "CstmrPmtCxlReq",
+      "elements": [
+        {
+          "name": "Assgnmt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Case",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cretr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "CtrlData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "NbOfTxs", "type": "string", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Undrlyg",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "OrgnlGrpInfAndCxl", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlPmtInfAndCxl", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.056.001.10",
+      "name": "FIToFIPaymentCancellationRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.056.001.10",
+      "rootElement": "FIToFIPmtCxlReq",
+      "elements": [
+        {
+          "name": "Assgnmt",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Case",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cretr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "CtrlData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "NbOfTxs", "type": "string", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Undrlyg",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "OrgnlGrpInfAndCxl", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "TxInf", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.057.001.07",
+      "name": "NotificationToReceive",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.057.001.07",
+      "rootElement": "NtfctnToRcv",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "Ntfctn",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Acct", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "AcctOwnr", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "AcctSvcr", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RltdAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "TtlAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "XpctdValDt", "type": "date", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Dbtr", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "DbtrAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrmyAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Itm", "type": "object", "minOccurs": 1, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.058.001.08",
+      "name": "NotificationToReceiveCancellationAdvice",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.058.001.08",
+      "rootElement": "NtfctnToRcvCxlAdvc",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "OrgnlNtfctn",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "OrgnlMsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlCreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlNtfctnId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "NtfctnCxl", "type": "boolean", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlItm", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "camt.060.001.06",
+      "name": "AccountReportingRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:camt.060.001.06",
+      "rootElement": "AcctRptgReq",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "RptgReq",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "Id", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "ReqdMsgNmId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Acct", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "AcctOwnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "AcctSvcr", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RptgPrd", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "ReqdTxTp", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "ReqdBalTp", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}
