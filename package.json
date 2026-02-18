@@ -1,0 +1,46 @@
+{
+  "name": "@eklabdev/fix-swift-forge",
+  "version": "1.0.0",
+  "description": "A type-safe, XML-driven FIX protocol parser for TypeScript. Supports FIX 4.0–5.0 SP2, custom definitions, parsing, validation, message building, and field masking.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "definitions"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "fix",
+    "fix-protocol",
+    "financial",
+    "parser",
+    "typescript",
+    "xml"
+  ],
+  "author": "EKLab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EklabDev/FixSwiftForge.git"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
