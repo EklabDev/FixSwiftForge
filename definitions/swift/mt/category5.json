@@ -1,0 +1,837 @@
+{
+  "category": 5,
+  "categoryName": "Securities Markets",
+  "messages": [
+    {
+      "type": "500",
+      "name": "Instruction to Register",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity of Financial Instrument", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "501",
+      "name": "Confirmation of Registration or Modification",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity of Financial Instrument", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "502",
+      "name": "Order to Buy or Sell",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator (Buy/Sell)", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity of Financial Instrument", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "90A", "name": "Price", "format": ":4!c//4!c/15d", "mandatory": false, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "94B", "name": "Place", "format": ":4!c//4!c[/30x]", "mandatory": false, "repeatable": false },
+        { "tag": "98A", "name": "Date/Time", "format": ":4!c//8!n", "mandatory": false, "repeatable": false },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "503",
+      "name": "Collateral Claim",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Collateral Type Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "504",
+      "name": "Collateral Proposal",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Collateral Type Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "505",
+      "name": "Collateral Substitution",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "506",
+      "name": "Collateral and Exposure Statement",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Statement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "22F", "name": "Indicator", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "35B", "name": "Security Identification", "format": "[ISIN1!e12!c]4*35x", "mandatory": false, "repeatable": true },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "507",
+      "name": "Collateral Status and Processing Advice",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25D", "name": "Status Code", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": false },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "508",
+      "name": "Intra-Position Advice",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "509",
+      "name": "Trade Status Message",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "25D", "name": "Status Code", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "510",
+      "name": "Registration Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "513",
+      "name": "Client Advice of Execution",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator (Buy/Sell)", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Trade Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "90A", "name": "Deal Price", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "19A", "name": "Settlement Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "514",
+      "name": "Trade Allegement",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator (Buy/Sell)", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Trade Date/Settlement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "90A", "name": "Deal Price", "format": ":4!c//4!c/15d", "mandatory": false, "repeatable": false },
+        { "tag": "19A", "name": "Settlement Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "515",
+      "name": "Client Confirmation of Purchase or Sale",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator (Buy/Sell)", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Trade Date/Settlement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "90A", "name": "Deal Price", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "19A", "name": "Settlement Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "516",
+      "name": "Securities Loan Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "517",
+      "name": "Trade Confirmation Affirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "25D", "name": "Status Code", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "518",
+      "name": "Market-Side Securities Trade Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator (Buy/Sell)", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Trade Date/Settlement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "90A", "name": "Deal Price", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "19A", "name": "Settlement Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "519",
+      "name": "Modification of Client Details",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": false, "repeatable": false },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "524",
+      "name": "Intra-Position Instruction",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "526",
+      "name": "General Securities Lending/Borrowing Message",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "527",
+      "name": "Triparty Collateral Instruction",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "528",
+      "name": "ETC Client-Side Settlement Instruction",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "529",
+      "name": "ETC Market-Side Settlement Instruction",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "530",
+      "name": "Transaction Processing Command",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "25D", "name": "Processing Status", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": false, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "535",
+      "name": "Statement of Holdings",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "28E", "name": "Page Number/Continuation Indicator", "format": "5n/4!c", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Statement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "22F", "name": "Statement Type", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true },
+        { "tag": "90A", "name": "Price", "format": ":4!c//4!c/15d", "mandatory": false, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": false, "repeatable": true }
+      ]
+    },
+    {
+      "type": "536",
+      "name": "Statement of Transactions",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "28E", "name": "Page Number/Continuation Indicator", "format": "5n/4!c", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Statement Period", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": false, "repeatable": true }
+      ]
+    },
+    {
+      "type": "537",
+      "name": "Statement of Pending Transactions",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "28E", "name": "Page Number/Continuation Indicator", "format": "5n/4!c", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Statement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true },
+        { "tag": "25D", "name": "Status", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "538",
+      "name": "Statement of Intra-Position Advices",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "28E", "name": "Page Number/Continuation Indicator", "format": "5n/4!c", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "540",
+      "name": "Receive Free",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22F", "name": "Indicator", "format": ":4!c//[8c/]4!c", "mandatory": false, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Settlement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "541",
+      "name": "Receive Against Payment",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Settlement Date/Trade Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Settlement Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "542",
+      "name": "Deliver Free",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Settlement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "543",
+      "name": "Deliver Against Payment",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Settlement Date/Trade Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Settlement Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "544",
+      "name": "Receive Free Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Settlement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "545",
+      "name": "Receive Against Payment Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Settlement Date/Trade Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Settlement Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "546",
+      "name": "Deliver Free Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Settlement Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "547",
+      "name": "Deliver Against Payment Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Settlement Date/Trade Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Settlement Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "548",
+      "name": "Settlement Status and Processing Advice",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "25D", "name": "Status Code", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "549",
+      "name": "Request for Statement/Status Advice",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "25D", "name": "Statement Type", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": false, "repeatable": true }
+      ]
+    },
+    {
+      "type": "558",
+      "name": "Triparty Collateral Status and Processing Advice",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "25D", "name": "Status", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "559",
+      "name": "Paying Agent's Claim",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "564",
+      "name": "Corporate Action Notification",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22F", "name": "Corporate Action Event Type", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": false, "repeatable": true },
+        { "tag": "92A", "name": "Rate", "format": ":4!c//[N]15d", "mandatory": false, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": false, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "565",
+      "name": "Corporate Action Instruction",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "22F", "name": "Option Type", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "566",
+      "name": "Corporate Action Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22F", "name": "Corporate Action Event Type", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": false, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "567",
+      "name": "Corporate Action Status and Processing Advice",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "25D", "name": "Status Code", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "568",
+      "name": "Corporate Action Narrative",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22F", "name": "Corporate Action Event Type", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": false, "repeatable": true },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "569",
+      "name": "Triparty Collateral and Exposure Statement",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "574",
+      "name": "IRS 1441 NRA",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "575",
+      "name": "Combined Activity Report",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "28E", "name": "Page Number/Continuation Indicator", "format": "5n/4!c", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Statement Period", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": false, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": false, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": false, "repeatable": true }
+      ]
+    },
+    {
+      "type": "576",
+      "name": "Statement of Open Orders",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "28E", "name": "Page Number/Continuation Indicator", "format": "5n/4!c", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "577",
+      "name": "Statement of Numbers",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "578",
+      "name": "Settlement Allegement",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "579",
+      "name": "Certificate Numbers",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true },
+        { "tag": "13B", "name": "Certificate Number", "format": ":4!c//[8c/]30x", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "581",
+      "name": "Collateral Adjustment Message",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "19A", "name": "Amount", "format": ":4!c//[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "584",
+      "name": "Statement of ETC Pending Trades",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "586",
+      "name": "Statement of Settlement Allegements",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "28E", "name": "Page Number/Continuation Indicator", "format": "5n/4!c", "mandatory": true, "repeatable": false },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false },
+        { "tag": "98A", "name": "Date", "format": ":4!c//8!n", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": true },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "587",
+      "name": "Depositary Receipt Instruction",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "22H", "name": "Indicator", "format": ":4!c//4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "588",
+      "name": "Depositary Receipt Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "36B", "name": "Quantity", "format": ":4!c//4!c/15d", "mandatory": true, "repeatable": false },
+        { "tag": "95P", "name": "Party", "format": ":4!c//4!a2!a2!c[3!c]", "mandatory": true, "repeatable": true },
+        { "tag": "97A", "name": "Account", "format": ":4!c//35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "589",
+      "name": "Depositary Receipt Status and Processing Advice",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23G", "name": "Function of the Message", "format": "4!c[/4!c]", "mandatory": true, "repeatable": false },
+        { "tag": "25D", "name": "Status Code", "format": ":4!c//[8c/]4!c", "mandatory": true, "repeatable": false },
+        { "tag": "35B", "name": "Identification of the Security", "format": "[ISIN1!e12!c]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "70E", "name": "Narrative", "format": ":4!c//10*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "590",
+      "name": "Advice of Charges, Interest and Other Adjustments",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "591",
+      "name": "Request for Payment of Charges, Interest and Other Expenses",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "592",
+      "name": "Request for Cancellation",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "11S", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": true, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "595",
+      "name": "Queries",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Queries", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "596",
+      "name": "Answers",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Answers", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "598",
+      "name": "Proprietary Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Sub-Message Type", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "77E", "name": "Proprietary Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "599",
+      "name": "Free Format Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    }
+  ]
+}

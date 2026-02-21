@@ -1,0 +1,210 @@
+{
+  "category": 8,
+  "categoryName": "Travellers Cheques",
+  "messages": [
+    {
+      "type": "800",
+      "name": "T/C Sales and Settlement Advice (Free Format)",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "30", "name": "Date of Sale", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Total Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Selling Agent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "801",
+      "name": "T/C Multiple Sales Advice",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "28", "name": "Statement Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Sale", "format": "6!n", "mandatory": true, "repeatable": true },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "52A", "name": "Selling Agent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "19", "name": "Sum of Amounts", "format": "17d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "802",
+      "name": "T/C Settlement Advice",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "30", "name": "Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Total Settlement Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Ordering Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "810",
+      "name": "Request for T/C Stock",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "30", "name": "Date of Request", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Face Value Requested", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "52A", "name": "Requesting Agent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "812",
+      "name": "Advice of T/C Stock Despatch",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Despatch", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Face Value Despatched", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "59", "name": "Consignee", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "813",
+      "name": "Advice of T/C Stock Receipt",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Receipt", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Face Value Received", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "820",
+      "name": "Request for T/C Refund",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "30", "name": "Date of Request", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Face Value for Refund", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "59", "name": "Purchaser", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Reason for Refund", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "821",
+      "name": "Acknowledgement of T/C Refund Request",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Status of Refund Request", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "822",
+      "name": "Notification of Loss or Theft of Travellers Cheques",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Notification", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Face Value", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "59", "name": "Purchaser", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Details of Loss/Theft", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "823",
+      "name": "Advice of Replacement of Travellers Cheques",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Replacement", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Face Value Replaced", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "59", "name": "Purchaser", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "824",
+      "name": "T/C Inventory Destruction/Cancellation Advice",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "30", "name": "Date of Destruction/Cancellation", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Face Value Destroyed/Cancelled", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "890",
+      "name": "Advice of Charges, Interest and Other Adjustments",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "891",
+      "name": "Request for Payment of Charges, Interest and Other Expenses",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "892",
+      "name": "Request for Cancellation",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "11S", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": true, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "895",
+      "name": "Queries",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Queries", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "896",
+      "name": "Answers",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Answers", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "898",
+      "name": "Proprietary Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Sub-Message Type", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "77E", "name": "Proprietary Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "899",
+      "name": "Free Format Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    }
+  ]
+}

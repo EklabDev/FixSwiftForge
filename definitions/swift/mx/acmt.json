@@ -1,0 +1,236 @@
+{
+  "businessArea": "acmt",
+  "businessAreaName": "Account Management",
+  "messages": [
+    {
+      "type": "acmt.001.001.08",
+      "name": "AccountOpeningInstructionV08",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.001.001.08",
+      "rootElement": "AcctOpngInstr",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrdrRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrdrRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "InstrDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "OpngTp", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "AcctApplId", "type": "string", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "InvstmtAcct", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "object", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Nm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Dsgnt", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Tp", "type": "object", "minOccurs": 0, "maxOccurs": 1 }, { "name": "OwnrshTp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Ccy", "type": "string", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "AcctPties", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "PrncplAcctPty", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "ScndryAcctPty", "type": "object", "minOccurs": 0, "maxOccurs": -1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.002.001.08",
+      "name": "AccountDetailsConfirmation",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.002.001.08",
+      "rootElement": "AcctDtlsConf",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrdrRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrdrRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "RltdRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "RltdRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "ConfDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "ConfTp", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "InvstmtAcct", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Nm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Tp", "type": "object", "minOccurs": 0, "maxOccurs": 1 }, { "name": "OwnrshTp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.003.001.08",
+      "name": "AccountModificationInstruction",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.003.001.08",
+      "rootElement": "AcctModInstr",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "InstrDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "AcctApplId", "type": "string", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "InvstmtAcctSlctn", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "AcctId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "ModfdInvstmtAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "Nm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Tp", "type": "object", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.005.001.06",
+      "name": "RequestForAccountManagementStatusReport",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.005.001.06",
+      "rootElement": "ReqForAcctMgmtStsRpt",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "ReqDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "AcctApplId", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "ExstgAcctId", "type": "object", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.006.001.07",
+      "name": "AccountManagementStatusReport",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.006.001.07",
+      "rootElement": "AcctMgmtStsRpt",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "RltdRef", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "RltdRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "StsRpt", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "StsRpt", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "AcctApplId", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "ExstgAcctId", "type": "object", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.007.001.05",
+      "name": "AccountOpeningRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.007.001.05",
+      "rootElement": "AcctOpngReq",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Fr", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Acct", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Ccy", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Nm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Tp", "type": "object", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "AcctSvcrId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FinInstnId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Org", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FullLglNm", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.008.001.05",
+      "name": "AccountOpeningAmendmentRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.008.001.05",
+      "rootElement": "AcctOpngAmdmntReq",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Acct", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Ccy", "type": "string", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "AcctSvcrId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FinInstnId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Org", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FullLglNm", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.010.001.04",
+      "name": "AccountRequestAcknowledgement",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.010.001.04",
+      "rootElement": "AcctReqAck",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "OrgnlMsgId", "type": "object", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "Fr", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctId", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.011.001.04",
+      "name": "AccountRequestRejection",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.011.001.04",
+      "rootElement": "AcctReqRjctn",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "OrgnlMsgId", "type": "object", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "Fr", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctId", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Rsn", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "RjctnRsn", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.012.001.04",
+      "name": "AccountAdditionalInformationRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.012.001.04",
+      "rootElement": "AcctAddtlInfReq",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Fr", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.013.001.04",
+      "name": "AccountReportRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.013.001.04",
+      "rootElement": "AcctRptReq",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctId", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctSvcrId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FinInstnId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.014.001.05",
+      "name": "AccountReport",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.014.001.05",
+      "rootElement": "AcctRpt",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Acct", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Sts", "type": "object", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Tp", "type": "object", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Ccy", "type": "string", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "AcctSvcrId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FinInstnId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Org", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FullLglNm", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.015.001.04",
+      "name": "AccountExcludedMandateMaintenanceRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.015.001.04",
+      "rootElement": "AcctExcldMndtMntncReq",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctId", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctSvcrId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FinInstnId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.020.001.04",
+      "name": "AccountClosingRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.020.001.04",
+      "rootElement": "AcctClsgReq",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctId", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctSvcrId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FinInstnId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "BalTrfAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.021.001.04",
+      "name": "AccountClosingAmendmentRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.021.001.04",
+      "rootElement": "AcctClsgAmdmntReq",
+      "elements": [
+        { "name": "Refs", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PrcId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctId", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "Id", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "AcctSvcrId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "FinInstnId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "OrgId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.022.001.04",
+      "name": "IdentificationModificationAdvice",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.022.001.04",
+      "rootElement": "IdModAdvc",
+      "elements": [
+        { "name": "Assgnmt", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrgnlTxRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrgnlMsgId", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "OrgnlMsgNmId", "type": "string", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "Mod", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "OrgnlPtyAndAcctId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "UpdtdPtyAndAcctId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.023.001.04",
+      "name": "IdentificationVerificationRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.023.001.04",
+      "rootElement": "IdVrfctnReq",
+      "elements": [
+        { "name": "Assgnmt", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Vrfctn", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "PtyAndAcctId", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "acmt.024.001.04",
+      "name": "IdentificationVerificationReport",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:acmt.024.001.04",
+      "rootElement": "IdVrfctnRpt",
+      "elements": [
+        { "name": "Assgnmt", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Assgnr", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Assgne", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "OrgnlAssgnmt", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "Rpt", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "OrgnlId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Vrfctn", "type": "boolean", "minOccurs": 1, "maxOccurs": 1 }, { "name": "Rsn", "type": "object", "minOccurs": 0, "maxOccurs": 1 }, { "name": "OrgnlPtyAndAcctId", "type": "object", "minOccurs": 0, "maxOccurs": 1 }, { "name": "UpdtdPtyAndAcctId", "type": "object", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    }
+  ]
+}

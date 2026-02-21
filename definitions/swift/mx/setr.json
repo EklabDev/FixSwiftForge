@@ -1,0 +1,158 @@
+{
+  "businessArea": "setr",
+  "businessAreaName": "Securities Trade",
+  "messages": [
+    {
+      "type": "setr.001.001.04",
+      "name": "RedemptionBulkOrder",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.001.001.04",
+      "rootElement": "RedBlkOrdr",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "BlkOrdrDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "FinInstrmDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "IndvOrdrDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1 }, { "name": "TtlSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 }, { "name": "ReqdSttlmCcy", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "ReqdNAVCcy", "type": "string", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.002.001.04",
+      "name": "RedemptionBulkOrderConfirmation",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.002.001.04",
+      "rootElement": "RedBlkOrdrConf",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "RltdRef", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "RltdRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "BlkExctnDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "FinInstrmDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "IndvExctnDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1 }, { "name": "TtlSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.003.001.04",
+      "name": "RedemptionBulkOrderCancellationRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.003.001.04",
+      "rootElement": "RedBlkOrdrCxlReq",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PrvsRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PrvsRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "CxlByRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrdrRef", "type": "string", "minOccurs": 1, "maxOccurs": -1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.004.001.04",
+      "name": "RedemptionOrder",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.004.001.04",
+      "rootElement": "RedOrdr",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "MltplOrdrDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "InvstmtAcctDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "IndvOrdrDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.005.001.04",
+      "name": "RedemptionOrderConfirmation",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.005.001.04",
+      "rootElement": "RedOrdrConf",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "RltdRef", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "RltdRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "MltplExctnDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "InvstmtAcctDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "IndvExctnDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.006.001.04",
+      "name": "RedemptionOrderCancellationRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.006.001.04",
+      "rootElement": "RedOrdrCxlReq",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PrvsRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PrvsRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "CxlByRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrdrRef", "type": "string", "minOccurs": 1, "maxOccurs": -1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.007.001.04",
+      "name": "SubscriptionBulkOrder",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.007.001.04",
+      "rootElement": "SbcptBlkOrdr",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "BlkOrdrDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "FinInstrmDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "IndvOrdrDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1 }, { "name": "TtlSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 }, { "name": "ReqdSttlmCcy", "type": "string", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.008.001.04",
+      "name": "SubscriptionBulkOrderConfirmation",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.008.001.04",
+      "rootElement": "SbcptBlkOrdrConf",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "RltdRef", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "RltdRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "BlkExctnDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "FinInstrmDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "IndvExctnDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1 }, { "name": "TtlSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.009.001.04",
+      "name": "SubscriptionBulkOrderCancellationRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.009.001.04",
+      "rootElement": "SbcptBlkOrdrCxlReq",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PrvsRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PrvsRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "CxlByRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrdrRef", "type": "string", "minOccurs": 1, "maxOccurs": -1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.010.001.04",
+      "name": "SubscriptionOrder",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.010.001.04",
+      "rootElement": "SbcptOrdr",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "MltplOrdrDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "InvstmtAcctDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "IndvOrdrDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.011.001.04",
+      "name": "SubscriptionOrderConfirmation",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.011.001.04",
+      "rootElement": "SbcptOrdrConf",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "RltdRef", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "RltdRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "MltplExctnDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1, "children": [{ "name": "InvstmtAcctDtls", "type": "object", "minOccurs": 1, "maxOccurs": 1 }, { "name": "IndvExctnDtls", "type": "object", "minOccurs": 1, "maxOccurs": -1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    },
+    {
+      "type": "setr.012.001.04",
+      "name": "SubscriptionOrderCancellationRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:setr.012.001.04",
+      "rootElement": "SbcptOrdrCxlReq",
+      "elements": [
+        { "name": "MsgId", "type": "object", "minOccurs": 1, "maxOccurs": 1, "children": [{ "name": "Id", "type": "string", "minOccurs": 1, "maxOccurs": 1 }, { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PoolRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PoolId", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "PrvsRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "PrvsRef", "type": "string", "minOccurs": 1, "maxOccurs": 1 }] },
+        { "name": "CxlByRef", "type": "object", "minOccurs": 0, "maxOccurs": 1, "children": [{ "name": "OrdrRef", "type": "string", "minOccurs": 1, "maxOccurs": -1 }] },
+        { "name": "SplmtryData", "type": "object", "minOccurs": 0, "maxOccurs": -1, "children": [{ "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 }, { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "category": 3,
+  "categoryName": "Foreign Exchange, Money Markets and Derivatives",
+  "messages": [
+    {
+      "type": "300",
+      "name": "Foreign Exchange Confirmation",
+      "fields": [
+        { "tag": "15A", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "22C", "name": "Common Reference", "format": "4!a2!n4!a", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "15B", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Value Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Exchange Rate", "format": "12d", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount We Buy", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "33B", "name": "Currency/Amount We Sell", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "53A", "name": "Delivery Agent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Receiving Agent", "format": "37x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "303",
+      "name": "Forex/Currency Option Allocation Instruction",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "57A", "name": "Receiving Agent", "format": "37x", "mandatory": true, "repeatable": true }
+      ]
+    },
+    {
+      "type": "304",
+      "name": "Advice/Instruction of a Third Party Deal",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Value Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Exchange Rate", "format": "12d", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount We Buy", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "33B", "name": "Currency/Amount We Sell", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "53A", "name": "Delivery Agent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Receiving Agent", "format": "37x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "305",
+      "name": "Foreign Currency Option Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "31C", "name": "Earliest Exercise Date", "format": "8!n", "mandatory": false, "repeatable": false },
+        { "tag": "31G", "name": "Expiry Date", "format": "8!n[/4!n]", "mandatory": true, "repeatable": false },
+        { "tag": "31E", "name": "Final Settlement Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "26F", "name": "Settlement Type", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Notional Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Strike Price", "format": "12d", "mandatory": true, "repeatable": false },
+        { "tag": "37K", "name": "Premium Price", "format": "3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "306",
+      "name": "Foreign Currency Option Confirmation",
+      "fields": [
+        { "tag": "15A", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "22C", "name": "Common Reference", "format": "4!a2!n4!a", "mandatory": true, "repeatable": false },
+        { "tag": "22K", "name": "Type of Event", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "31G", "name": "Expiry Date/Time", "format": "8!n[/4!n]", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Notional Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Strike Price", "format": "12d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "307",
+      "name": "Advice/Instruction of a Third Party FX Deal",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Value Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Exchange Rate", "format": "12d", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "308",
+      "name": "Instruction for Gross/Net Settlement of Third Party FX Deals",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Settlement Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Settlement Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "57A", "name": "Receiving Agent", "format": "37x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "320",
+      "name": "Fixed Deposit/Loan Confirmation",
+      "fields": [
+        { "tag": "15A", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "22B", "name": "Type of Event", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "15B", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "17R", "name": "Party A's Role", "format": "1!a", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Value Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30P", "name": "Maturity Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Principal Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "34E", "name": "Currency/Interest Amount", "format": "[N]3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "37G", "name": "Interest Rate", "format": "[N]12d", "mandatory": true, "repeatable": false },
+        { "tag": "14D", "name": "Day Count Fraction", "format": "3x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "321",
+      "name": "Instruction to Settle a Third Party Loan/Deposit",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Value Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Principal Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "57A", "name": "Receiving Agent", "format": "37x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "330",
+      "name": "Call/Notice Loan/Deposit Confirmation",
+      "fields": [
+        { "tag": "15A", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "22B", "name": "Type of Event", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "15B", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "17R", "name": "Party A's Role", "format": "1!a", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Value Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Principal Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "37G", "name": "Interest Rate", "format": "[N]12d", "mandatory": true, "repeatable": false },
+        { "tag": "14D", "name": "Day Count Fraction", "format": "3x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "340",
+      "name": "Forward Rate Agreement Confirmation",
+      "fields": [
+        { "tag": "15A", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "22B", "name": "Type of Event", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "22C", "name": "Common Reference", "format": "4!a2!n4!a", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "15B", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "17R", "name": "Party A Pays/Receives", "format": "1!a", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30F", "name": "Fixing Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Settlement Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30P", "name": "Maturity Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Notional Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "37G", "name": "Contract Rate", "format": "[N]12d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "341",
+      "name": "Forward Rate Agreement Settlement Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Settlement Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Settlement Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "37G", "name": "Settlement Rate", "format": "[N]12d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "350",
+      "name": "Advice of Loan/Deposit Interest Payment",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Value Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "34E", "name": "Currency/Interest Amount", "format": "[N]3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "37G", "name": "Interest Rate", "format": "[N]12d", "mandatory": true, "repeatable": false },
+        { "tag": "14D", "name": "Day Count Fraction", "format": "3x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "360",
+      "name": "Single Currency Interest Rate Derivative Confirmation",
+      "fields": [
+        { "tag": "15A", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "22B", "name": "Type of Event", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "22C", "name": "Common Reference", "format": "4!a2!n4!a", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Effective Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30P", "name": "Termination Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Notional Amount", "format": "3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "361",
+      "name": "Cross Currency Interest Rate Swap Confirmation",
+      "fields": [
+        { "tag": "15A", "name": "New Sequence", "format": "0", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "22B", "name": "Type of Event", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Effective Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30P", "name": "Termination Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Notional Amount (Party A)", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "33B", "name": "Currency/Notional Amount (Party B)", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Exchange Rate", "format": "12d", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "362",
+      "name": "Interest Rate Reset/Advice of Payment",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Reset Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "37G", "name": "New Interest Rate", "format": "[N]12d", "mandatory": true, "repeatable": false },
+        { "tag": "34E", "name": "Currency/Payment Amount", "format": "[N]3!a15d", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "364",
+      "name": "Single Currency Interest Rate Derivative Termination/Recouponing Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Termination Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Settlement Amount", "format": "3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "365",
+      "name": "Cross Currency Interest Rate Swap Termination/Recouponing Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Termination Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Settlement Amount (Party A)", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "33B", "name": "Currency/Settlement Amount (Party B)", "format": "3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "380",
+      "name": "Foreign Exchange Order",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Order Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Limit Rate", "format": "12d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "381",
+      "name": "Foreign Exchange Order Confirmation/Amendment",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Order Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Exchange Rate", "format": "12d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "390",
+      "name": "Advice of Charges, Interest and Other Adjustments",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "391",
+      "name": "Request for Payment of Charges, Interest and Other Expenses",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "392",
+      "name": "Request for Cancellation",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "11S", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": true, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "395",
+      "name": "Queries",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Queries", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "396",
+      "name": "Answers",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Answers", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "398",
+      "name": "Proprietary Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Sub-Message Type", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "77E", "name": "Proprietary Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "399",
+      "name": "Free Format Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    }
+  ]
+}

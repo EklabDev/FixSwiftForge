@@ -1,0 +1,538 @@
+{
+  "businessArea": "pacs",
+  "businessAreaName": "Payment Clearing and Settlement",
+  "messages": [
+    {
+      "type": "pacs.002.001.12",
+      "name": "FIToFIPaymentStatusReport",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.002.001.12",
+      "rootElement": "FIToFIPmtStsRpt",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "OrgnlGrpInfAndSts",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "OrgnlMsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlMsgNmId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlCreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlNbOfTxs", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "GrpSts", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "StsRsnInf", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "TxInfAndSts",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "OrgnlGrpInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlInstrId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlEndToEndId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlTxId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlUETR", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "TxSts", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "StsRsnInf", "type": "object", "minOccurs": 0, "maxOccurs": -1 },
+            { "name": "AccptncDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "FctvIntrBkSttlmDt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pacs.003.001.09",
+      "name": "FIToFICustomerDirectDebit",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.003.001.09",
+      "rootElement": "FIToFICstmrDrctDbt",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "NbOfTxs", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "TtlIntrBkSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmDt", "type": "date", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "SttlmInf", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "DrctDbtTxInf",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PmtId", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "PmtTpInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmAmt", "type": "amount", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstdAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "ChrgBr", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "DrctDbtTx", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "CdtrAgt", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cdtr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CdtrAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "DbtrAgt", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Dbtr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "DbtrAcct", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "RmtInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pacs.004.001.11",
+      "name": "PaymentReturn",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.004.001.11",
+      "rootElement": "PmtRtr",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "NbOfTxs", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "TtlRtrdIntrBkSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmDt", "type": "date", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "SttlmInf", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "OrgnlGrpInf",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "OrgnlMsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlMsgNmId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlCreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "TxInf",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "RtrId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlGrpInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlInstrId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlEndToEndId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlTxId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlUETR", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlIntrBkSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RtrdIntrBkSttlmAmt", "type": "amount", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "RtrdInstdAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "ChrgBr", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RtrRsnInf", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pacs.007.001.11",
+      "name": "FIToFIPaymentReversal",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.007.001.11",
+      "rootElement": "FIToFIPmtRvsl",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "NbOfTxs", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "TtlRvsdIntrBkSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmDt", "type": "date", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "SttlmInf", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "OrgnlGrpInf",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "OrgnlMsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlMsgNmId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlCreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "TxInf",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "RvslId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlGrpInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlInstrId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlEndToEndId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlTxId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlUETR", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlIntrBkSttlmAmt", "type": "amount", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "RvsdIntrBkSttlmAmt", "type": "amount", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "ChrgBr", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RvslRsnInf", "type": "object", "minOccurs": 0, "maxOccurs": -1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pacs.008.001.10",
+      "name": "FIToFICustomerCreditTransfer",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10",
+      "rootElement": "FIToFICstmrCdtTrf",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "NbOfTxs", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "TtlIntrBkSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmDt", "type": "date", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "SttlmInf", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "CdtTrfTxInf",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PmtId", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "PmtTpInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmAmt", "type": "amount", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstdAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "XchgRate", "type": "decimal", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "ChrgBr", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "ChrgsInf", "type": "object", "minOccurs": 0, "maxOccurs": -1 },
+            { "name": "PrvsInstgAgt1", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrmyAgt1", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "UltmtDbtr", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Dbtr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "DbtrAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "DbtrAgt", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CdtrAgt", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Cdtr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CdtrAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "UltmtCdtr", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Purp", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "RgltryRptg", "type": "object", "minOccurs": 0, "maxOccurs": -1 },
+            { "name": "RmtInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pacs.009.001.10",
+      "name": "FinancialInstitutionCreditTransfer",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.009.001.10",
+      "rootElement": "FICdtTrf",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "NbOfTxs", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "TtlIntrBkSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmDt", "type": "date", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "SttlmInf", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "CdtTrfTxInf",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PmtId", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "PmtTpInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmAmt", "type": "amount", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstdAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "XchgRate", "type": "decimal", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "ChrgBr", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrmyAgt1", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Dbtr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "DbtrAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "DbtrAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "CdtrAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Cdtr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CdtrAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pacs.010.001.05",
+      "name": "FIDirectDebit",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.010.001.05",
+      "rootElement": "FIDrctDbt",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "NbOfTxs", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "TtlIntrBkSttlmAmt", "type": "amount", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmDt", "type": "date", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "SttlmInf", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "CdtInstr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "CdtId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "IntrBkSttlmAmt", "type": "amount", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "Dbtr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "DbtrAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "DbtrAgt", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CdtrAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Cdtr", "type": "object", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CdtrAcct", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pacs.028.001.05",
+      "name": "FIToFIPaymentStatusRequest",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.028.001.05",
+      "rootElement": "FIToFIPmtStsReq",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "OrgnlGrpInf",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "OrgnlMsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlMsgNmId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlCreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "TxInf",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "StsReqId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlGrpInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlInstrId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlEndToEndId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlTxId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlUETR", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pacs.029.001.02",
+      "name": "FIToFICancelPaymentStatusReport",
+      "namespace": "urn:iso:std:iso:20022:tech:xsd:pacs.029.001.02",
+      "rootElement": "FIToFICxlPmtStsRpt",
+      "elements": [
+        {
+          "name": "GrpHdr",
+          "type": "object",
+          "minOccurs": 1,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "MsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "CreDtTm", "type": "dateTime", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "InstgAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "InstdAgt", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "OrgnlGrpInfAndSts",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": 1,
+          "children": [
+            { "name": "OrgnlMsgId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlMsgNmId", "type": "string", "minOccurs": 1, "maxOccurs": 1 },
+            { "name": "OrgnlCreDtTm", "type": "dateTime", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "GrpCxlSts", "type": "string", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "TxInfAndSts",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "CxlStsId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlGrpInf", "type": "object", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlInstrId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlEndToEndId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlTxId", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "OrgnlUETR", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "TxCxlSts", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "CxlStsRsnInf", "type": "object", "minOccurs": 0, "maxOccurs": -1 },
+            { "name": "OrgnlTxRef", "type": "object", "minOccurs": 0, "maxOccurs": 1 }
+          ]
+        },
+        {
+          "name": "SplmtryData",
+          "type": "object",
+          "minOccurs": 0,
+          "maxOccurs": -1,
+          "children": [
+            { "name": "PlcAndNm", "type": "string", "minOccurs": 0, "maxOccurs": 1 },
+            { "name": "Envlp", "type": "object", "minOccurs": 1, "maxOccurs": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

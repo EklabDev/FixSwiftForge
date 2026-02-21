@@ -1,0 +1,392 @@
+{
+  "category": 7,
+  "categoryName": "Documentary Credits and Guarantees",
+  "messages": [
+    {
+      "type": "700",
+      "name": "Issue of a Documentary Credit",
+      "fields": [
+        { "tag": "27", "name": "Sequence of Total", "format": "1!n/1!n", "mandatory": true, "repeatable": false },
+        { "tag": "40A", "name": "Form of Documentary Credit", "format": "24x", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Documentary Credit Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Reference to Pre-Advice", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "31C", "name": "Date of Issue", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "40E", "name": "Applicable Rules", "format": "30x", "mandatory": true, "repeatable": false },
+        { "tag": "31D", "name": "Date and Place of Expiry", "format": "6!n29x", "mandatory": true, "repeatable": false },
+        { "tag": "50", "name": "Applicant", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "59", "name": "Beneficiary", "format": "[/34x]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency Code, Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "39A", "name": "Percentage Credit Amount Tolerance", "format": "2n/2n", "mandatory": false, "repeatable": false },
+        { "tag": "41A", "name": "Available With...By...", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "42C", "name": "Drafts At", "format": "3*35x", "mandatory": false, "repeatable": false },
+        { "tag": "42A", "name": "Drawee", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "43P", "name": "Partial Shipments", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "43T", "name": "Transshipment", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "44A", "name": "Place of Taking in Charge/Dispatch from/Place of Receipt", "format": "65x", "mandatory": false, "repeatable": false },
+        { "tag": "44E", "name": "Port of Loading/Airport of Departure", "format": "65x", "mandatory": false, "repeatable": false },
+        { "tag": "44F", "name": "Port of Discharge/Airport of Destination", "format": "65x", "mandatory": false, "repeatable": false },
+        { "tag": "44B", "name": "Place of Final Destination", "format": "65x", "mandatory": false, "repeatable": false },
+        { "tag": "44C", "name": "Latest Date of Shipment", "format": "6!n", "mandatory": false, "repeatable": false },
+        { "tag": "45A", "name": "Description of Goods and/or Services", "format": "100*65x", "mandatory": false, "repeatable": false },
+        { "tag": "46A", "name": "Documents Required", "format": "100*65x", "mandatory": false, "repeatable": false },
+        { "tag": "47A", "name": "Additional Conditions", "format": "100*65x", "mandatory": false, "repeatable": false },
+        { "tag": "71B", "name": "Charges", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "48", "name": "Period for Presentation", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "49", "name": "Confirmation Instructions", "format": "7!x", "mandatory": true, "repeatable": false },
+        { "tag": "78", "name": "Instructions to Paying/Accepting/Negotiating Bank", "format": "12*65x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "701",
+      "name": "Issue of a Documentary Credit (Continuation)",
+      "fields": [
+        { "tag": "27", "name": "Sequence of Total", "format": "1!n/1!n", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Documentary Credit Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "45A", "name": "Description of Goods and/or Services", "format": "100*65x", "mandatory": false, "repeatable": false },
+        { "tag": "46A", "name": "Documents Required", "format": "100*65x", "mandatory": false, "repeatable": false },
+        { "tag": "47A", "name": "Additional Conditions", "format": "100*65x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "705",
+      "name": "Pre-Advice of a Documentary Credit",
+      "fields": [
+        { "tag": "27", "name": "Sequence of Total", "format": "1!n/1!n", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Documentary Credit Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "31C", "name": "Date of Issue", "format": "6!n", "mandatory": false, "repeatable": false },
+        { "tag": "40A", "name": "Form of Documentary Credit", "format": "24x", "mandatory": false, "repeatable": false },
+        { "tag": "31D", "name": "Date and Place of Expiry", "format": "6!n29x", "mandatory": false, "repeatable": false },
+        { "tag": "50", "name": "Applicant", "format": "4*35x", "mandatory": false, "repeatable": false },
+        { "tag": "59", "name": "Beneficiary", "format": "[/34x]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency Code, Amount", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "707",
+      "name": "Amendment to a Documentary Credit",
+      "fields": [
+        { "tag": "20", "name": "Documentary Credit Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Amendment Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Issuing Bank", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "31C", "name": "Date of Issue", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Amendment", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "31D", "name": "New Date and Place of Expiry", "format": "6!n29x", "mandatory": false, "repeatable": false },
+        { "tag": "32B", "name": "Increase of Documentary Credit Amount", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "33B", "name": "Decrease of Documentary Credit Amount", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "34B", "name": "New Documentary Credit Amount After Amendment", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "44A", "name": "Place of Taking in Charge", "format": "65x", "mandatory": false, "repeatable": false },
+        { "tag": "44C", "name": "Latest Date of Shipment", "format": "6!n", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "710",
+      "name": "Advice of a Third Bank's or Non-Bank's Documentary Credit",
+      "fields": [
+        { "tag": "27", "name": "Sequence of Total", "format": "1!n/1!n", "mandatory": true, "repeatable": false },
+        { "tag": "40B", "name": "Form of Documentary Credit", "format": "24x", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Documentary Credit Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Advice Number", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "31C", "name": "Date of Issue", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "31D", "name": "Date and Place of Expiry", "format": "6!n29x", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Issuing Bank", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "50", "name": "Applicant", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "59", "name": "Beneficiary", "format": "[/34x]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency Code, Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "41A", "name": "Available With...By...", "format": "37x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "711",
+      "name": "Advice of a Third Bank's or Non-Bank's Documentary Credit (Continuation)",
+      "fields": [
+        { "tag": "27", "name": "Sequence of Total", "format": "1!n/1!n", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Documentary Credit Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "45A", "name": "Description of Goods and/or Services", "format": "100*65x", "mandatory": false, "repeatable": false },
+        { "tag": "46A", "name": "Documents Required", "format": "100*65x", "mandatory": false, "repeatable": false },
+        { "tag": "47A", "name": "Additional Conditions", "format": "100*65x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "720",
+      "name": "Transfer of a Documentary Credit",
+      "fields": [
+        { "tag": "27", "name": "Sequence of Total", "format": "1!n/1!n", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Transferring Bank's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Documentary Credit Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "31C", "name": "Date of Issue", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "31D", "name": "Date and Place of Expiry", "format": "6!n29x", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Issuing Bank", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "50", "name": "First Beneficiary", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "59", "name": "Second Beneficiary", "format": "[/34x]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency Code, Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "41A", "name": "Available With...By...", "format": "37x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "721",
+      "name": "Transfer of a Documentary Credit (Continuation)",
+      "fields": [
+        { "tag": "27", "name": "Sequence of Total", "format": "1!n/1!n", "mandatory": true, "repeatable": false },
+        { "tag": "20", "name": "Transferring Bank's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "45A", "name": "Description of Goods and/or Services", "format": "100*65x", "mandatory": false, "repeatable": false },
+        { "tag": "46A", "name": "Documents Required", "format": "100*65x", "mandatory": false, "repeatable": false },
+        { "tag": "47A", "name": "Additional Conditions", "format": "100*65x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "730",
+      "name": "Acknowledgement",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Credit Account", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "30", "name": "Date of Acknowledgement", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "732",
+      "name": "Advice of Discharge",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Advice", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount Utilized", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "734",
+      "name": "Advice of Refusal",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Advice", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "77J", "name": "Discrepancies", "format": "20*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "740",
+      "name": "Authorisation to Reimburse",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Reimbursing Account", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "21", "name": "Documentary Credit Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Maximum Credit Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "41A", "name": "Available With...By...", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "31D", "name": "Date and Place of Expiry", "format": "6!n29x", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Charges", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "742",
+      "name": "Reimbursement Claim",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Claim Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Draft", "format": "6!n", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "71B", "name": "Charges", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "747",
+      "name": "Amendment to an Authorisation to Reimburse",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Amendment", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "31D", "name": "New Date and Place of Expiry", "format": "6!n29x", "mandatory": false, "repeatable": false },
+        { "tag": "32B", "name": "Increase of Reimbursement Amount", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "33B", "name": "Decrease of Reimbursement Amount", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "34B", "name": "New Amount After Amendment", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "750",
+      "name": "Advice of Discrepancy",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Documents", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount Claimed", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "77J", "name": "Discrepancies", "format": "20*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "752",
+      "name": "Authorisation to Pay, Accept or Negotiate",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Advice", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount Authorized", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Charges", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "754",
+      "name": "Advice of Payment/Acceptance/Negotiation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Documents", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount Paid/Accepted/Negotiated", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "33A", "name": "Value Date/Currency/Amount of Proceeds", "format": "6!n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "71B", "name": "Charges Deducted", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "756",
+      "name": "Advice of Reimbursement or Payment",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Advice", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount Reimbursed", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Charges", "format": "6*35x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "760",
+      "name": "Guarantee / Standby Letter of Credit",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Further Identification", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22A", "name": "Purpose of Message", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Issue", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "40C", "name": "Applicable Rules", "format": "35x", "mandatory": false, "repeatable": false },
+        { "tag": "22D", "name": "Type of Undertaking", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "31E", "name": "Expiry Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "50", "name": "Applicant", "format": "4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "59", "name": "Beneficiary", "format": "[/34x]4*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77C", "name": "Details of Guarantee", "format": "150*65x", "mandatory": true, "repeatable": false },
+        { "tag": "77L", "name": "Governing Law and Place of Jurisdiction", "format": "100*65x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "767",
+      "name": "Guarantee / Standby Letter of Credit Amendment",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Amendment Number", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "22B", "name": "Purpose of Message", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Amendment", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "31E", "name": "New Date of Expiry", "format": "6!n", "mandatory": false, "repeatable": false },
+        { "tag": "32B", "name": "Increase of Amount", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "33B", "name": "Decrease of Amount", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "34B", "name": "New Amount After Amendment", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "77C", "name": "Amendment Details", "format": "150*65x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "768",
+      "name": "Acknowledgement of a Guarantee / Standby Letter of Credit Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Acknowledgement", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "769",
+      "name": "Advice of Reduction or Release",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Further Identification", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "30", "name": "Date of Advice", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount Reduced", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "33B", "name": "Currency/Outstanding Balance", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "77C", "name": "Details", "format": "150*65x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "790",
+      "name": "Advice of Charges, Interest and Other Adjustments",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "791",
+      "name": "Request for Payment of Charges, Interest and Other Expenses",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "792",
+      "name": "Request for Cancellation",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "11S", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": true, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "795",
+      "name": "Queries",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Queries", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "796",
+      "name": "Answers",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Answers", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "798",
+      "name": "Proprietary Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Sub-Message Type", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "77E", "name": "Proprietary Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "799",
+      "name": "Free Format Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    }
+  ]
+}

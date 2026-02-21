@@ -1,0 +1,269 @@
+{
+  "category": 6,
+  "categoryName": "Precious Metals and Syndications",
+  "messages": [
+    {
+      "type": "600",
+      "name": "Precious Metal Trade Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Metal Type", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Value Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32F", "name": "Weight/Amount We Buy", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "33F", "name": "Weight/Amount We Sell", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Price", "format": "12d", "mandatory": true, "repeatable": false },
+        { "tag": "53A", "name": "Delivery Agent", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Receiving Agent", "format": "37x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "601",
+      "name": "Precious Metal Option Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Metal Type", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "31G", "name": "Expiry Date", "format": "8!n[/4!n]", "mandatory": true, "repeatable": false },
+        { "tag": "32F", "name": "Weight/Notional Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "36", "name": "Strike Price", "format": "12d", "mandatory": true, "repeatable": false },
+        { "tag": "37K", "name": "Premium Price", "format": "3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "604",
+      "name": "Precious Metal Transfer/Delivery Order",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "23", "name": "Metal Type", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32F", "name": "Weight/Amount", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "605",
+      "name": "Precious Metal Notice to Receive",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "23", "name": "Metal Type", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32F", "name": "Weight/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Delivering Party", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "606",
+      "name": "Precious Metal Debit Advice",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Metal Type", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Value Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32F", "name": "Weight/Amount Debited", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "607",
+      "name": "Precious Metal Credit Advice",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Metal Type", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Value Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32F", "name": "Weight/Amount Credited", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "608",
+      "name": "Statement of a Metal Account",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "28", "name": "Statement Number/Sequence Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "60F", "name": "Opening Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "61", "name": "Statement Line", "format": "6!n[4!n]2a[1!a]15d1!a3!c16x[//16x][34x]", "mandatory": false, "repeatable": true },
+        { "tag": "62F", "name": "Closing Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "64", "name": "Closing Available Balance", "format": "1!a6!n3!a15d", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "609",
+      "name": "Statement of Metal Contracts",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Statement Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Contract Reference", "format": "16x", "mandatory": true, "repeatable": true },
+        { "tag": "23", "name": "Metal Type", "format": "16x", "mandatory": true, "repeatable": true },
+        { "tag": "32F", "name": "Weight/Amount", "format": "3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "36", "name": "Price", "format": "12d", "mandatory": false, "repeatable": true }
+      ]
+    },
+    {
+      "type": "620",
+      "name": "Metal Fixed Loan/Deposit Confirmation",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "22A", "name": "Type of Operation", "format": "4!c", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Metal Type", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "82A", "name": "Party A", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "87A", "name": "Party B", "format": "37x", "mandatory": true, "repeatable": false },
+        { "tag": "17R", "name": "Party A's Role", "format": "1!a", "mandatory": true, "repeatable": false },
+        { "tag": "30T", "name": "Trade Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30V", "name": "Value Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "30P", "name": "Maturity Date", "format": "8!n", "mandatory": true, "repeatable": false },
+        { "tag": "32F", "name": "Weight/Principal Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "37G", "name": "Interest Rate", "format": "[N]12d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "643",
+      "name": "Notice of Drawdown/Renewal",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Type of Drawdown", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Date of Drawdown", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "644",
+      "name": "Advice of Rate and Amount Fixing",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Interest Period", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Principal Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "37G", "name": "Interest Rate", "format": "[N]12d", "mandatory": true, "repeatable": false },
+        { "tag": "34E", "name": "Currency/Interest Amount", "format": "[N]3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "645",
+      "name": "Notice of Fee Due",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "23", "name": "Type of Fee", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Fee Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Fee Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "646",
+      "name": "Payment of Principal and/or Interest",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Payment Date", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Principal Amount", "format": "3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "34E", "name": "Currency/Interest Amount", "format": "[N]3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "37G", "name": "Interest Rate", "format": "[N]12d", "mandatory": false, "repeatable": false },
+        { "tag": "57A", "name": "Account With Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "649",
+      "name": "General Syndicated Facility Message",
+      "fields": [
+        { "tag": "20", "name": "Sender's Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "690",
+      "name": "Advice of Charges, Interest and Other Adjustments",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "691",
+      "name": "Request for Payment of Charges, Interest and Other Expenses",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "692",
+      "name": "Request for Cancellation",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "11S", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": true, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "695",
+      "name": "Queries",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Queries", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "696",
+      "name": "Answers",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Answers", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "698",
+      "name": "Proprietary Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Sub-Message Type", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "77E", "name": "Proprietary Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "699",
+      "name": "Free Format Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    }
+  ]
+}

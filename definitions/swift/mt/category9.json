@@ -1,0 +1,256 @@
+{
+  "category": 9,
+  "categoryName": "Cash Management and Customer Status",
+  "messages": [
+    {
+      "type": "900",
+      "name": "Confirmation of Debit",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "52A", "name": "Ordering Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "910",
+      "name": "Confirmation of Credit",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "50A", "name": "Ordering Customer", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "52A", "name": "Ordering Institution", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "56A", "name": "Intermediary", "format": "37x", "mandatory": false, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "920",
+      "name": "Request Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Requested Message", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "34F", "name": "Floor Limit Indicator", "format": "[D/C]3!a15d", "mandatory": false, "repeatable": true }
+      ]
+    },
+    {
+      "type": "935",
+      "name": "Rate Change Advice",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "30", "name": "Effective Date of New Rate", "format": "6!n", "mandatory": true, "repeatable": false },
+        { "tag": "37H", "name": "New Interest Rate", "format": "1!a[N]12d", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "940",
+      "name": "Customer Statement Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "28C", "name": "Statement Number/Sequence Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "60F", "name": "Opening Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "61", "name": "Statement Line", "format": "6!n[4!n]2a[1!a]15d1!a3!c16x[//16x][34x]", "mandatory": false, "repeatable": true },
+        { "tag": "86", "name": "Information to Account Owner", "format": "6*65x", "mandatory": false, "repeatable": true },
+        { "tag": "62F", "name": "Closing Balance (Booked Funds)", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "64", "name": "Closing Available Balance", "format": "1!a6!n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "65", "name": "Forward Available Balance", "format": "1!a6!n3!a15d", "mandatory": false, "repeatable": true }
+      ]
+    },
+    {
+      "type": "941",
+      "name": "Balance Report",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "28C", "name": "Statement Number/Sequence Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "60F", "name": "Opening Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "90D", "name": "Number and Sum of Debit Entries", "format": "5n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "90C", "name": "Number and Sum of Credit Entries", "format": "5n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "62F", "name": "Closing Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "64", "name": "Closing Available Balance", "format": "1!a6!n3!a15d", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "942",
+      "name": "Interim Transaction Report",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "28C", "name": "Statement Number/Sequence Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "34F", "name": "Floor Limit Indicator", "format": "[D/C]3!a15d", "mandatory": true, "repeatable": true },
+        { "tag": "13D", "name": "Date/Time Indication", "format": "6!n4!n1!x4!n", "mandatory": true, "repeatable": false },
+        { "tag": "61", "name": "Statement Line", "format": "6!n[4!n]2a[1!a]15d1!a3!c16x[//16x][34x]", "mandatory": false, "repeatable": true },
+        { "tag": "86", "name": "Information to Account Owner", "format": "6*65x", "mandatory": false, "repeatable": true },
+        { "tag": "90D", "name": "Number and Sum of Debit Entries", "format": "5n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "90C", "name": "Number and Sum of Credit Entries", "format": "5n3!a15d", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "943",
+      "name": "Information Report",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "28C", "name": "Statement Number/Sequence Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "61", "name": "Statement Line", "format": "6!n[4!n]2a[1!a]15d1!a3!c16x[//16x][34x]", "mandatory": false, "repeatable": true },
+        { "tag": "86", "name": "Information to Account Owner", "format": "6*65x", "mandatory": false, "repeatable": true }
+      ]
+    },
+    {
+      "type": "950",
+      "name": "Statement Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "28C", "name": "Statement Number/Sequence Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "60F", "name": "Opening Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "61", "name": "Statement Line", "format": "6!n[4!n]2a[1!a]15d1!a3!c16x[//16x][34x]", "mandatory": false, "repeatable": true },
+        { "tag": "62F", "name": "Closing Balance (Booked Funds)", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "64", "name": "Closing Available Balance", "format": "1!a6!n3!a15d", "mandatory": false, "repeatable": false },
+        { "tag": "65", "name": "Forward Available Balance", "format": "1!a6!n3!a15d", "mandatory": false, "repeatable": true }
+      ]
+    },
+    {
+      "type": "970",
+      "name": "Netting Statement",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "28C", "name": "Statement Number/Sequence Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "60F", "name": "Opening Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "61", "name": "Statement Line", "format": "6!n[4!n]2a[1!a]15d1!a3!c16x[//16x][34x]", "mandatory": false, "repeatable": true },
+        { "tag": "62F", "name": "Closing Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "971",
+      "name": "Netting Balance Report",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "28C", "name": "Statement Number/Sequence Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "60F", "name": "Opening Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "62F", "name": "Closing Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "972",
+      "name": "Netting Interim Statement",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false },
+        { "tag": "28C", "name": "Statement Number/Sequence Number", "format": "5n[/5n]", "mandatory": true, "repeatable": false },
+        { "tag": "60F", "name": "Opening Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "61", "name": "Statement Line", "format": "6!n[4!n]2a[1!a]15d1!a3!c16x[//16x][34x]", "mandatory": false, "repeatable": true },
+        { "tag": "62F", "name": "Closing Balance", "format": "1!a6!n3!a15d", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "973",
+      "name": "Netting Request Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Requested Message", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "25", "name": "Account Identification", "format": "35x", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "985",
+      "name": "Status Enquiry",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "11S", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": true, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "986",
+      "name": "Status Report",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Status", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "990",
+      "name": "Advice of Charges, Interest and Other Adjustments",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32A", "name": "Value Date/Currency/Amount", "format": "6!n3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "991",
+      "name": "Request for Payment of Charges, Interest and Other Expenses",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "32B", "name": "Currency/Amount", "format": "3!a15d", "mandatory": true, "repeatable": false },
+        { "tag": "71B", "name": "Details of Charges", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "72", "name": "Sender to Receiver Information", "format": "6*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "992",
+      "name": "Request for Cancellation",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "11S", "name": "MT and Date of Original Message", "format": "3!n[6!n]", "mandatory": true, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "995",
+      "name": "Queries",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "75", "name": "Queries", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "996",
+      "name": "Answers",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "76", "name": "Answers", "format": "6*35x", "mandatory": true, "repeatable": false },
+        { "tag": "77A", "name": "Narrative", "format": "20*35x", "mandatory": false, "repeatable": false }
+      ]
+    },
+    {
+      "type": "998",
+      "name": "Proprietary Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "12", "name": "Sub-Message Type", "format": "3!n", "mandatory": true, "repeatable": false },
+        { "tag": "77E", "name": "Proprietary Message", "format": "10000z", "mandatory": true, "repeatable": false }
+      ]
+    },
+    {
+      "type": "999",
+      "name": "Free Format Message",
+      "fields": [
+        { "tag": "20", "name": "Transaction Reference", "format": "16x", "mandatory": true, "repeatable": false },
+        { "tag": "21", "name": "Related Reference", "format": "16x", "mandatory": false, "repeatable": false },
+        { "tag": "79", "name": "Narrative", "format": "35*50x", "mandatory": true, "repeatable": false }
+      ]
+    }
+  ]
+}
