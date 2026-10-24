@@ -1,6 +1,6 @@
 {
   "name": "@eklabdev/fix-swift-forge",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A type-safe FIX, SWIFT MT (ISO 15022), and MX (ISO 20022) toolkit for TypeScript. Supports FIX 4.0–5.0 SP2, all MT categories 1–9, all ISO 20022 business areas, parsing, validation, building, conversion, and masking.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
